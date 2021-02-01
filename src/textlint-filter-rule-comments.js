@@ -53,14 +53,13 @@ module.exports = function(context, options = defaultOptions) {
             }
 
         },
-        [`${Syntax.Document}:exit`](node) {console.log(JSON.stringify(disablingComments, null, 4));
+        [`${Syntax.Document}:exit`](node) {
             node.children.reduce((config, child) => {
                 if (config.disable) {
                     if (config.rules.length === 0) {
                         shouldIgnore(child.range, { ruleId: '*' });
                     } else {
                         config.rules.forEach(rule => {
-                            console.log(rule);
                             shouldIgnore(child.range, { ruleId: rule });
                         });
                     }
@@ -76,7 +75,6 @@ module.exports = function(context, options = defaultOptions) {
                         break;
                     }
                 }
-                console.log(config);
                 return config;
             }, { disable: false, rules: [] });
         },
