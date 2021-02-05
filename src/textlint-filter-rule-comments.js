@@ -26,6 +26,7 @@ module.exports = function(context, options = defaultOptions) {
             comments.forEach(commentValue => {
                 if (commentValue.indexOf(disablingComment) !== -1) {
                     const configValue = commentValue.replace(disablingComment, '');
+                    console.log(configValue);
                     configValue.replace(/\s*,\s*/g, ',').split(/,+/).forEach(name => {
                         name = name.trim();
                         if (!name) {
