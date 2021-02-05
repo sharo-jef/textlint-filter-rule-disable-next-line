@@ -10,7 +10,6 @@ module.exports = function(context, options = defaultOptions) {
     }
     const disablingComments = [];
     const disablingComment = options.disablingComment || defaultOptions.disablingComment;
-    console.log('disabling comment:', disablingComment);
 
     return {
         [Syntax.Html](node) {
@@ -26,7 +25,6 @@ module.exports = function(context, options = defaultOptions) {
             comments.forEach(commentValue => {
                 if (commentValue.indexOf(disablingComment) !== -1) {
                     const configValue = commentValue.replace(disablingComment, '');
-                    console.log(configValue);
                     configValue.replace(/\s*,\s*/g, ',').split(/,+/).forEach(name => {
                         name = name.trim();
                         if (!name) {
