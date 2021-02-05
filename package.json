@@ -36,7 +36,7 @@
     "babel-preset-jsdoc-to-assert": "^1.0.1",
     "babel-preset-power-assert": "^1.0.0",
     "babel-register": "^6.8.0",
-    "mocha": "^2.4.5",
+    "mocha": "^2.5.3",
     "power-assert": "^1.4.0",
     "textlint": "^6.9.0",
     "textlint-rule-report-node-types": "^1.1.0"

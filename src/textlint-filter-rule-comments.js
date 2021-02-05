@@ -10,6 +10,7 @@ module.exports = function(context, options = defaultOptions) {
     }
     const disablingComments = [];
     const disablingComment = options.disablingComment || defaultOptions.disablingComment;
+    console.log('disabling comment:', disablingComment);
 
     return {
         [Syntax.Html](node) {
